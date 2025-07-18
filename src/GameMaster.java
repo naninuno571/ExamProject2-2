@@ -1,10 +1,7 @@
-import creature.Monster;
-import creature.character.Hero;
-import creature.character.Thief;
-import creature.character.Wizard;
-import creature.monster.Goblin;
-import creature.monster.Matango;
-import creature.monster.Slime;
+import creature.*;
+import creature.Character;
+import creature.character.*;
+import creature.monster.*;
 
 import java.util.ArrayList;
 

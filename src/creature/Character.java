@@ -22,12 +22,4 @@ public abstract class Character implements Creature{
     public void setName(){this.name=name;}
 
     public abstract void attack(Creature target);
-
-    public static interface Creature {
-        public boolean isAlive();
-        public void showStatus();
-        public  String getName();
-        public int getHp();
-        public void setHp(int hp);
-    }
 }

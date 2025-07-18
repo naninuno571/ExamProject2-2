@@ -1,6 +1,8 @@
 package creature.character;
 
-import creature.*;
+import creature.Character;
+import creature.Creature;
+
 public class Hero extends Character {
     private String weapon;
 

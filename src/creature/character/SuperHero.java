@@ -1,5 +1,7 @@
 package creature.character;
 
+import creature.Creature;
+
 public class SuperHero extends Hero {
     public SuperHero(Hero h) {
         super(h.getName(), h.getHp(),h.getWeapon());

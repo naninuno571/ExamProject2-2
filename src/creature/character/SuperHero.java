@@ -7,7 +7,7 @@ import weapon.Weapon;
 public class SuperHero extends Hero {
     Weapon w = new Sword();
     public SuperHero(Hero h) {
-        super(h.getName(), h.getHp(),w.getName());
+        super(h.getName(), h.getHp());
         this.setHp(h.getHp()-30);
         System.out.println("ダメージを受けた"+getName()+"が突然光りだした\n"+getName()+"スーパーヒーローに進化した！");
     }

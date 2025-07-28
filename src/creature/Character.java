@@ -1,13 +1,16 @@
 package creature;
 
 
+import weapon.Sword;
+import weapon.Wand;
 import weapon.Weapon;
 
 public abstract class Character implements Creature{
     private String name;
     private int hp;
-    Weapon weapon ;
-    public Character(String name, int hp,String weapon){
+    Weapon weapon;
+    public Character(String name, int hp,Weapon weapon){
+        Weapon w = new Sword();
          if(hp <= 0){
              throw new IllegalArgumentException("初期設定に誤りがあるため、キャラクターを作成できませんでした");
          }

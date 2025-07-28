@@ -8,7 +8,7 @@ import weapon.Weapon;
 public class Hero extends Character {
     Weapon w = new Sword();
     public Hero(String name, int hp) {
-        super(name, hp,w.getName());
+        super(name, hp,new Sword());
     }
 
     public void attack(Creature target) {

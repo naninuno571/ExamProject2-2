@@ -10,7 +10,7 @@ public class Wizard extends Character {
     private int mp;
     Weapon w = new Wand();
     public Wizard(String name, int hp, int mp) {
-        super(name, hp, w.getName());
+        super(name, hp,new Wand());
         this.mp=mp;
     }
     @Override

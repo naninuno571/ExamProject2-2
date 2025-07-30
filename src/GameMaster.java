@@ -21,8 +21,8 @@ public class GameMaster {
         party.add(new Wizard("魔法使い",60,20));
         Thief t = new Thief("盗賊",70);
         party.add(t);
-        int[] a = {0,1,2};
-        int[] monsterparty = new int[monster.size()];
+        int[] a = new int[party.size()];
+
         int matangocnt = 0;
         int slimecnt = 0;
         int goblinint = 0;
@@ -43,6 +43,7 @@ public class GameMaster {
                     break;
             }
         }
+        int[] monsterparty = new int[monster.size()];
         boolean superheroflg = false;
 
         while(!(party.isEmpty() || monster.isEmpty())){
@@ -53,9 +54,11 @@ public class GameMaster {
                     if (!(monster.get(c2).isAlive())) {
                         monster.get(c2).die();
                         monster.remove(c2);
+                        monsterparty=new int[monster.size()];
                     } else if (monster.get(c2).getHp() <= 5) {
                         monster.get(c2).run();
                         monster.remove(c2);
+                        monsterparty=new int[monster.size()];
                     }
                 }
                 System.out.println("---味方パーティ---");
@@ -127,6 +130,7 @@ public class GameMaster {
                     if ((!party.get(c).isAlive())) {
                         party.get(c).die();
                         party.remove(c);
+                        a = new int[party.size()];
                     }
                 }
                 int attacktarget = (int) (random() * party.size());

@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f767111a-e7d4-4e11-84d4-234ba8e45eb5" name="変更" comment="tuika">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameMaster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMaster.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/creature/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/creature/Monster.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/creature/character/Thief.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/creature/character/Thief.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/creature/monster/Slime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/creature/monster/Slime.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +22,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/naninuno571/ExamProject2.git",
+    "accountId": "93a6fd0a-92bd-4d9b-8686-54fbba3f99f9"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -47,7 +49,7 @@
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "C:/Users/241034/IdeaProjects/ExamProject2/src/Main.java",
     "vue.rearranger.settings.migration": "true",
-    "アプリケーション.GameMaster.executor": "Run"
+    "アプリケーション.GameMaster.executor": "Debug"
   }
 }]]></component>
   <component name="SharedIndexes">
@@ -69,7 +71,7 @@
       <workItem from="1753408872957" duration="5143000" />
       <workItem from="1753414139247" duration="76000" />
       <workItem from="1753668038154" duration="5317000" />
-      <workItem from="1753834396844" duration="4375000" />
+      <workItem from="1753834396844" duration="4681000" />
     </task>
     <task id="LOCAL-00001" summary="tuika">
       <option name="closed" value="true" />
@@ -87,7 +89,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753673362669</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="tuika">
+      <option name="closed" value="true" />
+      <created>1753838988068</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1753838988068</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -102,8 +112,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GameMaster.java</url>
-          <line>139</line>
+          <line>142</line>
           <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GameMaster.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="52" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

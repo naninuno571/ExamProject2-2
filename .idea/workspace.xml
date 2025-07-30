@@ -7,12 +7,8 @@
     <list default="true" id="f767111a-e7d4-4e11-84d4-234ba8e45eb5" name="変更" comment="tuika">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameMaster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMaster.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/creature/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/creature/Character.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/creature/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/creature/Monster.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/creature/character/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/creature/character/Hero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/creature/character/SuperHero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/creature/character/SuperHero.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/creature/character/Thief.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/creature/character/Thief.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/creature/character/Wizard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/creature/character/Wizard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/creature/monster/Slime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/creature/monster/Slime.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +68,8 @@
       <workItem from="1753230786464" duration="4039000" />
       <workItem from="1753408872957" duration="5143000" />
       <workItem from="1753414139247" duration="76000" />
-      <workItem from="1753668038154" duration="5037000" />
+      <workItem from="1753668038154" duration="5317000" />
+      <workItem from="1753834396844" duration="4375000" />
     </task>
     <task id="LOCAL-00001" summary="tuika">
       <option name="closed" value="true" />
@@ -82,7 +79,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753234871414</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="tuika">
+      <option name="closed" value="true" />
+      <created>1753673362669</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1753673362669</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -97,7 +102,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GameMaster.java</url>
-          <line>125</line>
+          <line>139</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>

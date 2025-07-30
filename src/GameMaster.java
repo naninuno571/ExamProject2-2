@@ -7,12 +7,10 @@ import java.util.ArrayList;
 import java.io.*;
 
 import static java.lang.Math.random;
-import static java.lang.Math.sqrt;
 
 //TIP コードを<b>実行</b>するには、<shortcut actionId="Run"/> を押すか
 // ガターの <icon src="AllIcons.Actions.Execute"/> アイコンをクリックします。
 public class GameMaster {
-    private static Object c1;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -23,63 +21,75 @@ public class GameMaster {
         party.add(new Wizard("魔法使い",60,20));
         Thief t = new Thief("盗賊",70);
         party.add(t);
+        int[] a = {0,1,2};
+        int[] monsterparty = new int[monster.size()];
+        int matangocnt = 0;
+        int slimecnt = 0;
+        int goblinint = 0;
         for(int i=0;i<5;i++){
             int cnt = (int) (random()*3);
             switch(cnt){
                 case 0:
-                    monster.add(new Matango((char)('A'+i),45));
+                    monster.add(new Matango((char)('A'+matangocnt),45));
+                    matangocnt++;
                     break;
                 case 1:
-                    monster.add(new Goblin((char)('A'+i),50));
+                    monster.add(new Goblin((char)('A'+goblinint),50));
+                    goblinint++;
                     break;
                 case 2:
-                    monster.add(new Slime((char)('A'+i),40));
+                    monster.add(new Slime((char)('A'+slimecnt),40));
+                    slimecnt++;
+                    break;
             }
         }
         boolean superheroflg = false;
-        System.out.println("---味方パーティ---");
-        for(Character c : party){
-            c.showStatus();
-        }
-        System.out.println("---敵グループ---");
-        for(Monster c2 : monster){
-            c2.showStatus();
-        }
-        do {
-            for (Character c : party) {
-                if (c instanceof Hero && (!(superheroflg))) {
-                    System.out.println(c.getName() + "のターン\n1. 攻撃\n2. SuperHeroになる");
-                } else if (c instanceof Wizard) {
-                    System.out.println(c.getName() + "のターン\n1. 攻撃\n2. 魔法攻撃");
-                } else if (c instanceof Thief) {
-                    System.out.println(c.getName() + "のターン\n1. 攻撃\n2. 守り");
-                    ((Thief) c).guard();
-                } else if (c instanceof SuperHero && superheroflg) {
-                    System.out.println(c.getName() + "のターン\n1. 攻撃");
+
+        while(!(party.isEmpty() || monster.isEmpty())){
+
+            for (int e:a) {
+                int choice = 0;
+                for (int c2:monsterparty) {
+                    if (!(monster.get(c2).isAlive())) {
+                        monster.get(c2).die();
+                        monster.remove(c2);
+                    } else if (monster.get(c2).getHp() <= 5) {
+                        monster.get(c2).run();
+                        monster.remove(c2);
+                    }
                 }
-                int choice;
-                do {
-                    try {
-                        System.out.println("行動を入力してください");
-                        choice = Integer.parseInt(br.readLine());
-                        if(!(choice ==1||choice ==2)){
-                            System.out.println("選びなおしてください");
-                            continue;
+                System.out.println("---味方パーティ---");
+                for(Character c : party){
+                    c.showStatus();
+                }
+                System.out.println("---敵グループ---");
+                for(Monster c2 : monster){
+                    c2.showStatus();
+                }
+                if (party.get(e) instanceof Hero && (!(superheroflg))) {
+                    System.out.println(party.get(e).getName() + "のターン\n1. 攻撃\n2. SuperHeroになる");
+                } else if (party.get(e) instanceof Wizard) {
+                    System.out.println(party.get(e).getName() + "のターン\n1. 攻撃\n2. 魔法攻撃");
+                } else if (party.get(e) instanceof Thief) {
+                    System.out.println(party.get(e).getName() + "のターン\n1. 攻撃\n2. 守り");
+                    ((Thief) party.get(e)).guard();
+                } else if (party.get(e) instanceof SuperHero && superheroflg) {
+                    System.out.println(party.get(e).getName() + "のターン\n1. 攻撃");
+                }
+                if(superheroflg){}
+                    do {
+                        try {
+                            System.out.println("行動を入力してください");
+                            choice = Integer.parseInt(br.readLine());
+                            if (!(choice == 1 || choice == 2)) {
+                                System.out.println("選びなおしてください");
+                                continue;
+                            }
+                            break;
+                        } catch (NumberFormatException error) {
+                            System.out.println("数字を入力してください");
                         }
-                        break;
-                    } catch (NumberFormatException e) {
-                        System.out.println("数字を入力してください");
-                    }
-                } while (true);
-                for (Monster c2 : monster) {
-                    if (!(c2.isAlive())) {
-                        c2.die();
-                        monster.remove(c2);
-                    } else if (c2.getHp() <= 5) {
-                        c2.run();
-                        monster.remove(c2);
-                    }
-                }
+                    } while (true);
                 if (choice == 1) {
                     do {
                         try {
@@ -90,41 +100,44 @@ public class GameMaster {
                             }
                             System.out.println("攻撃対象を選んでください");
                             int target = Integer.parseInt(br.readLine())-1;
-                            c.attack(monster.get(target));
+                            party.get(e).attack(monster.get(target));
                             break;
-                        } catch (NumberFormatException e) {
+                        } catch (NumberFormatException error) {
                             System.out.println("数字を入力してください");
-                        } catch (IndexOutOfBoundsException e) {
+                        } catch (IndexOutOfBoundsException error) {
                             System.out.println("選びなおしてください");
+                            continue;
                         }
                     } while (true);
-                } else if (c instanceof Hero) {
+                } else if (party.get(e) instanceof Hero&& (!(superheroflg))) {
                     superheroflg = true;
-                    SuperHero sh = new SuperHero(new Hero("勇者", c.getHp()));
-                    party.remove(c);
-                    party.add(sh);
-                } else if (c instanceof Wizard) {
+                    SuperHero sh = new SuperHero(new Hero("勇者", party.get(e).getHp()));
+                    party.remove(party.get(e));
+                    party.add(0, sh);
+                } else if (party.get(e) instanceof Wizard) {
                     System.out.println("攻撃対象を選んでください");
                     int target = Integer.parseInt(br.readLine());
-                    ((Wizard) c).magic(monster.get(target));
-                } else if (c instanceof Thief) { }
+                    ((Wizard) party.get(e)).magic(monster.get(target));
+                } else if (party.get(e) instanceof Thief) {
+                    ((Thief) party.get(e)).guard();
+                }
             }
-            for (Monster c2 : monster) {
-                for (Character c : party) {
-                    if ((!c.isAlive())) {
-                        c.die();
+            for (int c2:monsterparty) {
+                for (int c:a) {
+                    if ((!party.get(c).isAlive())) {
+                        party.get(c).die();
                         party.remove(c);
                     }
                 }
                 int attacktarget = (int) (random() * party.size());
-                c2.attack(party.get(attacktarget));
+                monster.get(c2).attack(party.get(attacktarget));
             }
             if(party.isEmpty()){
                 System.out.println("味方パーティは全滅してしまった…");
             } else if(monster.isEmpty()){
                 System.out.println("敵を全て倒した!"+h.getName()+"達は勝利した!");
             }
-        }while(!(party.isEmpty() || monster.isEmpty()));
+        }
 
     }
 }

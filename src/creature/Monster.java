@@ -22,7 +22,7 @@ public abstract class Monster implements Creature{
     public int getHp(){
         return hp;
     }
-    public void run(){System.out.println(getName()+getSuffix()+"は逃げ出した！");}
+    public void run(){System.out.println(getName()+"は逃げ出した！");}
     public void die(){System.out.println(getName()+getSuffix()+"を倒した！");}
 
     public abstract void attack(Creature target);
